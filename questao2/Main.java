@@ -1,2 +1,41 @@
-import java.util.*;
-public class Main { public static void main(String[] args){Scanner s=new Scanner(System.in);int[] a=new int[6];int q=0;while(q<6){System.out.print("Digite a "+(q+1)+"ª dezena (1 a 60): ");if(!s.hasNextInt()){System.out.println("Informe um inteiro.");s.next();continue;}int n=s.nextInt();if(n<1||n>60){System.out.println("Fora do intervalo 1–60.");continue;}boolean dup=false;for(int i=0;i<q;i++)if(a[i]==n)dup=true;if(dup){System.out.println("Número duplicado.");continue;}a[q++]=n;}Arrays.sort(a);System.out.println(Arrays.toString(a));s.close();} }
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int[] numeros = new int[6];
+
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.print("Digite um número de 1 a 60: ");
+            int numero = entrada.nextInt();
+
+            while (numero < 1 || numero > 60) {
+                System.out.print("Número inválido. Digite outro: ");
+                numero = entrada.nextInt();
+            }
+
+            boolean repetido = true;
+            while (repetido) {
+                repetido = false;
+                for (int j = 0; j < i; j++) {
+                    if (numeros[j] == numero) {
+                        repetido = true;
+                        System.out.print("Esse número já foi escolhido. Digite outro: ");
+                        numero = entrada.nextInt();
+                        while (numero < 1 || numero > 60) {
+                            System.out.print("Número inválido. Digite outro: ");
+                            numero = entrada.nextInt();
+                        }
+                        break;
+                    }
+                }
+            }
+            numeros[i] = numero;
+        }
+
+        Arrays.sort(numeros);
+        System.out.println("Números escolhidos: " + Arrays.toString(numeros));
+        entrada.close();
+    }
+}
