@@ -1,2 +1,26 @@
 import java.util.Scanner;
-public class Main { public static void main(String[] args){Scanner s=new Scanner(System.in);System.out.print("Quantidade de termos: ");if(!s.hasNextInt()){System.out.println("Informe um inteiro não negativo.");s.close();return;}int n=s.nextInt();if(n<0){System.out.println("n deve ser não negativo.");s.close();return;}long a=0,b=1;System.out.print("[");for(int i=0;i<n;i++){if(i>0)System.out.print(", ");System.out.print(a);if(i<n-1){if(Long.MAX_VALUE-a<b){System.out.println("]");System.out.println("Limite do tipo long atingido.");s.close();return;}long p=a+b;a=b;b=p;}}System.out.println("]");s.close();} }
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Quantos termos de Fibonacci deseja ver? ");
+        int n = entrada.nextInt();
+
+        if (n < 0) {
+            System.out.println("Digite um número positivo.");
+        } else {
+            long primeiro = 0;
+            long segundo = 1;
+
+            for (int i = 0; i < n; i++) {
+                System.out.print(primeiro);
+                if (i < n - 1) System.out.print(", ");
+                long proximo = primeiro + segundo;
+                primeiro = segundo;
+                segundo = proximo;
+            }
+            System.out.println();
+        }
+        entrada.close();
+    }
+}
