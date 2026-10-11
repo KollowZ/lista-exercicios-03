@@ -1,11 +1,10 @@
-# Lista de Exercícios 03 — Java
+# Lista de Exercícios 03
 
-Resoluções separadas por questão.
+Respostas da lista feitas em Java.
 
-- `questao1/`: classes Aluno, Turma e demonstração.
-- `questao2/`: seis dezenas distintas, validação e ordenação.
-- `questao3/`: primeiros n termos de Fibonacci.
-- `questao4/RESPOSTA.md`: explicação conceitual.
+- Questão 1: alunos e turma
+- Questão 2: números da Mega-Sena
+- Questão 3: sequência de Fibonacci
+- Questão 4: arrays primitivos e arrays de objetos
 
-## Execução
-Entre na pasta de uma questão e execute `javac *.java` e `java Main` (na questão 4, leia o arquivo Markdown). Requer JDK instalado.
+Para testar as questões em Java, entre na pasta e execute `javac *.java` e depois `java Main`.
