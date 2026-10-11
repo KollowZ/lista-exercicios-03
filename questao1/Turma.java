@@ -1,6 +1,27 @@
-import java.util.*;
-public class Turma { private final List<Aluno> alunos=new ArrayList<>();
- public void adicionarAluno(Aluno a){if(a==null)throw new IllegalArgumentException("Aluno nulo.");alunos.add(a);}
- public void listarAprovados(){System.out.println("Aprovados:");for(Aluno a:alunos)if(a.estaAprovado())System.out.println(a);}
- public void listarReprovados(){System.out.println("Reprovados:");for(Aluno a:alunos)if(!a.estaAprovado())System.out.println(a);}
+import java.util.ArrayList;
+
+public class Turma {
+    private ArrayList<Aluno> alunos = new ArrayList<>();
+
+    public void adicionarAluno(Aluno aluno) {
+        alunos.add(aluno);
+    }
+
+    public void listarAprovados() {
+        System.out.println("Alunos aprovados:");
+        for (Aluno aluno : alunos) {
+            if (aluno.estaAprovado()) {
+                System.out.println(aluno);
+            }
+        }
+    }
+
+    public void listarReprovados() {
+        System.out.println("Alunos reprovados:");
+        for (Aluno aluno : alunos) {
+            if (!aluno.estaAprovado()) {
+                System.out.println(aluno);
+            }
+        }
+    }
 }
