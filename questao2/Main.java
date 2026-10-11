@@ -1,0 +1,2 @@
+import java.util.*;
+public class Main { public static void main(String[] args){Scanner s=new Scanner(System.in);int[] a=new int[6];int q=0;while(q<6){System.out.print("Digite a "+(q+1)+"ª dezena (1 a 60): ");if(!s.hasNextInt()){System.out.println("Informe um inteiro.");s.next();continue;}int n=s.nextInt();if(n<1||n>60){System.out.println("Fora do intervalo 1–60.");continue;}boolean dup=false;for(int i=0;i<q;i++)if(a[i]==n)dup=true;if(dup){System.out.println("Número duplicado.");continue;}a[q++]=n;}Arrays.sort(a);System.out.println(Arrays.toString(a));s.close();} }
